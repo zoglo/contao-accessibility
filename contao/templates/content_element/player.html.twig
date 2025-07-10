@@ -9,7 +9,6 @@
         {% for track in data.textTrackSRC|deserialize|default %}
             {% set track = track|file|default %}
 
-            {% dump(track) %}
             {% if track|default %}
                 {% set track_attributes = attrs()
                     .setIfExists('kind', track.textTrackType|default)
