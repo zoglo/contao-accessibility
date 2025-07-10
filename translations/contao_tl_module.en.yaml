@@ -1,0 +1,4 @@
+tl_module:
+    ariaLabel:
+        - ARIA label
+        - If there is more than one navigation element on the page, each should have a unique label.

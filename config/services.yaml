@@ -1,0 +1,12 @@
+services:
+    _defaults:
+        autoconfigure: true
+
+    contao_accessibility.listener.data_container.track_fields:
+        class: Zoglo\ContaoAccessibility\EventListener\DataContainer\TrackFieldsListener
+
+    contao_accessibility.twig.contao_accessibility:
+        class: Zoglo\ContaoAccessibility\Twig\ContaoAccessibilityExtension
+        arguments:
+            - '@contao.framework'
+            - '@contao.filesystem.virtual.files'

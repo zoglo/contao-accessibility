@@ -1,0 +1,4 @@
+tl_module:
+    ariaLabel:
+        - ARIA-Label
+        - Wenn es mehr als ein Navigationselement auf der Seite gibt, sollte jedes eine eindeutige Bezeichnung haben.
