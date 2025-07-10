@@ -18,8 +18,27 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['playerTitle'] = [
     ],
 ];
 
+$GLOBALS['TL_DCA']['tl_content']['fields']['textTrackSRC'] = [
+    'inputType' => 'fileTree',
+    'eval' => [
+        'multiple' => true,
+        'fieldType' => 'checkbox',
+        'filesOnly' => true,
+        'extensions' => 'vtt',
+        'isSortable' => true,
+    ],
+    'sql' => [
+        'type' => 'blob',
+        'notnull' => false,
+        'length' => 65535,
+    ],
+];
+
 PaletteManipulator::create()
     ->addField('playerTitle', 'playerSize', PaletteManipulator::POSITION_BEFORE)
     ->applyToPalette('youtube', 'tl_content')
     ->applyToPalette('vimeo', 'tl_content')
+    ->addLegend('texttrack_legend', 'source_legend')
+    ->addField('textTrackSRC', 'texttrack_legend', PaletteManipulator::POSITION_APPEND)
+    ->applyToPalette('player', 'tl_content')
 ;

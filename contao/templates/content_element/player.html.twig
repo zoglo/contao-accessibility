@@ -1,0 +1,26 @@
+{% extends "@Contao/content_element/player.html.twig" %}
+
+{% block media %}
+    <{{ figure.media.type }}{{ figure.media.attributes }}>
+        {% for source_attributes in figure.media.sources %}
+            {% do csp_source('media-src', source_attributes.src) %}
+            <source{{ source_attributes }}>
+        {% endfor %}
+        {% for track in data.textTrackSRC|deserialize|default %}
+            {% set track = track|file|default %}
+
+            {% dump(track) %}
+            {% if track|default %}
+                {% set track_attributes = attrs()
+                    .setIfExists('kind', track.textTrackType|default)
+                    .set('label', track.item.extraMetadata.localized.default.title|default)
+                    .set('srclang', track.textTrackLanguage|default)
+                    .set('src', track.path|default)
+                %}
+
+                {% do csp_source('media-src', track_attributes.src) %}
+                <track{{ track_attributes }}>
+            {% endif %}
+        {% endfor %}
+    </{{ figure.media.type }}>
+{% endblock %}
