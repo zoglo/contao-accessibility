@@ -1,0 +1,10 @@
+tl_content:
+    texttrack_legend: Text tracks
+
+    playerTitle:
+        - Title
+        - Here you can enter a title.
+
+    textTrackSRC:
+        - Text track files
+        - The topmost .vtt file is loaded as the default track. Additional settings can be made within the .vtt file.

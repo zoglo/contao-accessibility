@@ -1,0 +1,14 @@
+tl_files:
+    textTrackLanguage:
+        - Language
+        - Please select the language of the file.
+
+    textTrackType:
+        - Track type
+        - Here you can select the type of text track.
+
+    captions:       Closed captions
+    descriptions:   Audio descriptions
+    subtitles:      Subtitles
+    chapters:       Chapters
+    metadata:       Metadata

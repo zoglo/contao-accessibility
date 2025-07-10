@@ -1,0 +1,14 @@
+tl_files:
+    textTrackLanguage:
+        - Sprache
+        - Bitte wählen Sie die Sprache der Datei aus.
+
+    textTrackType:
+        - Text-Spur Typ
+        - Bitte wählen Sie einen Text-Spur Typen aus.
+
+    captions:       Geschlossene Untertitel
+    descriptions:   Audiobeschreibung
+    subtitles:      Untertitel
+    chapters:       Kapitel
+    metadata:       Metadaten

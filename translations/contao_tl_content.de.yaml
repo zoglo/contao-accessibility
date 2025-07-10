@@ -1,0 +1,10 @@
+tl_content:
+    texttrack_legend: Text-Spuren
+
+    playerTitle:
+        - Titel
+        - Hier können Sie einen Titel eingeben.
+
+    textTrackSRC:
+        - Text-Spur-Dateien
+        - Die oberste .vtt-Datei wird als Standardspur geladen. Zusätzliche Einstellungen können innerhalb der .vtt-Datei vorgenommen werden.
