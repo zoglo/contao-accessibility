@@ -1,0 +1,30 @@
+includes:
+    - vendor/phpstan/phpstan/conf/bleedingEdge.neon
+    - vendor/phpstan/phpstan-phpunit/extension.neon
+    - vendor/phpstan/phpstan-phpunit/rules.neon
+    - vendor/phpstan/phpstan-symfony/extension.neon
+    - vendor/phpstan/phpstan-symfony/rules.neon
+    - vendor/slam/phpstan-extensions/conf/symfony-rules.neon
+    #- vendor/shipmonk/dead-code-detector/rules.neon
+
+parameters:
+    level: 6
+
+    paths:
+        - %currentWorkingDirectory%/contao
+        - %currentWorkingDirectory%/src
+
+    dynamicConstantNames:
+        - BE_USER_LOGGED_IN
+
+    universalObjectCratesClasses:
+        - Contao\BackendUser
+        - Contao\ContentElement
+        - Contao\Database\Result
+        - Contao\Model
+        - Contao\Module
+        - Contao\Template
+        - Contao\User
+
+    treatPhpDocTypesAsCertain: false
+    rememberPossiblyImpureFunctionValues: false

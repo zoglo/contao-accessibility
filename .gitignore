@@ -1,0 +1,27 @@
+# Composer
+/.htaccess
+/composer.lock
+/vendor/
+/auth.json
+
+# Contao Manager
+/contao-manager/
+
+# Node
+/package-lock.json
+/node_modules/
+
+# IDE
+/.idea
+
+# Generated folder
+/bin/
+/system/*
+!/system/config/
+/system/config/localconfig.php
+/var/
+
+# Skip files
+/system/modules/*/.skip
+/.env
+/.env.local
