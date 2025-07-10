@@ -1,0 +1,6 @@
+{% extends "@Contao/content_element/_video.html.twig" %}
+
+{% set iframe_attrs = attrs()
+    .setIfExists('title', data.playerTitle|default)
+    .mergeWith(iframe_attrs|default)
+%}
