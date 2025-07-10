@@ -17,6 +17,7 @@ Includes Backports and accessibility features to the Contao CMS, notably the fol
 ### Since Contao 5.5
 
 * Add a `title` attribute to the `youtube` and `vimeo` element (https://github.com/contao/contao/pull/7572)
+* Add the `autocomplete` attribute to form fields (https://github.com/contao/contao/pull/7473)
 * Implement subtitles and CC functionality for videos (https://github.com/contao/contao/pull/7604)
 
 ### Since Contao 5.6
