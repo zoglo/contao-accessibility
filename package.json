@@ -1,15 +1,14 @@
 {
     "devDependencies": {
-        "@babel/core": "^7.28",
-        "@babel/preset-env": "^7.28",
+        "@biomejs/biome": "^2.1",
         "@symfony/webpack-encore": "^5.1",
         "postcss": "^8.5",
         "postcss-loader": "^8.1",
         "postcss-preset-env": "^10.2",
         "sass": "^1.89",
         "sass-loader": "^16.0",
-        "webpack": "^5.99",
-        "webpack-cli": "^6.0",
+        "stylelint": "^16.23",
+        "stylelint-config-standard": "^39.0",
         "webpack-dev-server": "^5.2",
         "webpack-notifier": "^1.15"
     },
@@ -20,6 +19,9 @@
         "dev-server": "encore dev-server",
         "dev": "encore dev",
         "watch": "encore dev --watch",
-        "build": "encore production --progress"
+        "build": "encore production --progress",
+        "lint:js": "biome check --write --unsafe assets/accessibility/scripts",
+        "lint:css": "stylelint --fix assets/accessibility/styles",
+        "lint": "run-s lint:js lint:css"
     }
 }

@@ -1,5 +1,8 @@
+/.editorconfig export-ignore
 /.gitignore export-ignore
+/.stylelintrc.json export-ignore
 /assets export-ignore
+/biome.json export-ignore
 /depcheck.php export-ignore
 /ecs.php export-ignore
 /phpstan.neon export-ignore
