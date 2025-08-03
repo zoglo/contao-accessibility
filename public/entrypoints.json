@@ -2,10 +2,10 @@
   "entrypoints": {
     "navigation": {
       "css": [
-        "/bundles/contaoaccessibility/navigation.d70c49d9.css"
+        "/bundles/contaoaccessibility/navigation.bed9c363.css"
       ],
       "js": [
-        "/bundles/contaoaccessibility/navigation.8dd3e8d5.js"
+        "/bundles/contaoaccessibility/navigation.b50048a6.js"
       ]
     }
   }
