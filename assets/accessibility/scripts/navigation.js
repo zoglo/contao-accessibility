@@ -41,8 +41,10 @@ export class Navigation {
         }
 
         new ResizeObserver(() => {
+            const isDesktop = this.#isDesktop();
+
             for (const dropdown of this.dropdowns) {
-                this.#isDesktop() ? this.#registerDropdownEvents(dropdown) : this.#unregisterDropdownEvents(dropdown);
+                isDesktop ? this.#registerDropdownEvents(dropdown) : this.#unregisterDropdownEvents(dropdown);
             }
         }).observe(document.body);
     }

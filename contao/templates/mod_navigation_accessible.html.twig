@@ -60,6 +60,7 @@
 
 {% block script %}
     {% add "accessible_navigation_js" to head %}
+        <link rel="modulepreload" href="{{ asset('navigation.js', 'contao_accessibility') }}">
         <script src="{{ asset('navigation.js', 'contao_accessibility') }}" type="module"></script>
     {% endadd %}
 
@@ -68,12 +69,23 @@
         .mergeWith(script_attributes|default)
     %}
 
+    {% add "accessible_navigation_js" to body %}
+        <script{{ script_attributes }}>
+            const accessibleNavBreakpoint = parseInt(window.getComputedStyle(document.body).getPropertyValue('--nav-breakpoint'), 10) || 1024;
+            new ResizeObserver(() => {
+                const navIsDesktop = window.innerWidth >= accessibleNavBreakpoint;
+                document.body.classList.toggle('nav-is-desktop', navIsDesktop)
+                document.body.classList.toggle('nav-is-mobile', !navIsDesktop)
+            }).observe(document.body);
+        </script>
+    {% endadd %}
+
     <script{{ script_attributes }}>
         window.addEventListener('load', () => {
             new AccessibilityNavigation({
                 selector: '.navigation-main',
                 toggle: '.nav-burger',
-                minWidth: 1024,
+                minWidth: accessibleNavBreakpoint,
                 classes: {
                     submenuButton: 'btn-toggle-submenu',
                     expand: 'nav-expanded'
